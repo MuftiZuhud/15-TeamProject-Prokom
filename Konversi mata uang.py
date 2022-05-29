@@ -53,3 +53,67 @@ def menu():
 """)
     nomor_menu = int(input("Masukkan nomor menu yang diinginkan = "))
     return nomor_menu
+
+
+def daftar_kurs():
+    nomor_pilihan = int(input('''
+---------------------------------------------------------------------
+|                          Daftar kurs                              |
+|                                                                   |
+|    1. Tekan 1 untuk melihat daftar kurs dalam IDR                 |
+|    2. Tekan 2 untuk melihat daftar kurs dalam USD                 |
+|    3. Tekan 3 untuk melihat daftar kurs dalam SGD                 |
+|    4. Tekan 4 untuk melihat daftar kurs dalam EUR                 |
+|    5. Tekan 5 untuk melihat daftar kurs dalam AUD                 |
+|    6. Tekan 6 untuk melihat daftar kurs dalam GBP                 |
+|    7. Tekan 7 untuk melihat daftar kurs dalam JPY                 |
+|    8. Tekan 8 untuk melihat daftar kurs dalam KRW                 |
+|    9. Tekan 9 untuk melihat daftar kurs dalam HKD                 |
+|    10. Tekan 10 untuk melihat daftar kurs dalam CNY               |
+|    11. Tekan 11 untuk melihat daftar kurs dalam SAR               |
+|    12. Tekan 12 untuk melihat daftar kurs dalam MYR               |
+|                                                                   |
+|    Tekan 0 untuk kembali ke menu utama                            |
+---------------------------------------------------------------------
+Pilihan anda : '''))
+    print("---------------------------------------------------------------------")
+    if 1 <= nomor_pilihan <= 10 :
+        if nomor_pilihan == 1:
+            a = "1000 IDR"
+        elif nomor_pilihan == 2:
+            a = "1 USD"
+        elif nomor_pilihan == 3:
+            a = "1 SGD" 
+        elif nomor_pilihan == 4:
+            a = "1 EUR"
+        elif nomor_pilihan == 5:
+            a = "1 AUD"
+        elif nomor_pilihan == 6:
+            a = "1 GBP"
+        elif nomor_pilihan == 7:
+            a = "1 JPY"
+        elif nomor_pilihan == 8:
+            a = "1 KRW"
+        elif nomor_pilihan == 9:
+            a = "1 HKD"
+        elif nomor_pilihan == 10:
+            a = "1 CNY"
+        elif nomor_pilihan == 11:
+            a = "1 SAR"
+        elif nomor_pilihan == 12:
+            a = "1 MYR"
+        print(f'                   Daftar kurs dalam {a}')
+        for i in range(1,13):
+            print(i, '.', kurs[nomor_pilihan - 1][i -1][0], '=', kurs[nomor_pilihan - 1][i - 1][1])
+        print("---------------------------------------------------------------------")
+    elif nomor_pilihan == 0:
+        nomor_pilihan = menu()
+        return nomor_pilihan
+    else:
+        print("Masukkan tidak dikenal kembali ke menu sebelumnya.")
+        input("Tekan untuk melanjutkan ... ")
+        nomor_pilihan = menu()
+        return nomor_pilihan
+    input("Tekan untuk melanjutkan ... ")
+    nomor_pilihan = menu()
+    return nomor_pilihan
