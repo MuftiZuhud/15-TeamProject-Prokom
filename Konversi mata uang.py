@@ -77,7 +77,7 @@ def daftar_kurs():
 ---------------------------------------------------------------------
 Pilihan anda : '''))
     print("---------------------------------------------------------------------")
-    if 1 <= nomor_pilihan <= 10 :
+    if 1 <= nomor_pilihan <= 12 :
         if nomor_pilihan == 1:
             a = "1000 IDR"
         elif nomor_pilihan == 2:
