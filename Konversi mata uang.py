@@ -1,7 +1,10 @@
 #Currency Corverter
 #Program yang menstimulasikan bagaimana sebuah Currency Converter
 
-no_passport = [3256758, 2341567, 6789543, 5432678, 9075432, 7865456, 6875430, 4563219, 8765432, 8790654, 6786908, 7654890]
+from tracemalloc import start
+
+
+no_passport = [3256758, 2341567, 6789543, 5432678, 9075432, 7865456, 6875430, 4563219, 8765432, 8790654, 6786908, 7654890,0]
 
 kurs = [# Dalam IDR
         [['IDR', '1000'], ['USD', '0.068'], ['SGD', '0.09'], ['EUR', '0.064'], ['AUD', '0.096'], ['GBP', '0.054'], ['JPY', '8.72'], ['KRW', '86.9'], ['HKD', '0.53'], ['CNY', '0.45'], ['SAR', '0.25'], ['MYR', '0.3']],
@@ -28,9 +31,23 @@ kurs = [# Dalam IDR
         # Dalam MYR
         [['IDR', '3340.56'], ['USD', '0.227'], ['SGD', '0.314'], ['EUR', '0.215'], ['AUD', '0.323'], ['GBP', '0.182'], ['JPY', '29.139'], ['KRW', '290.23'], ['HKD', '1.787'], ['CNY', '1.5424'], ['SAR', '0.854'], ['MYR', '1']]]
 
+def start():
+    input("""
+---------------------------------------------------------------------
+|                         Konversi Mata Uang                        |
+|                                                                   |
+|                                                                   |
+|                                                                   |
+|                                                                   |
+|                   Tekan apapun untuk melanjutkan                  |
+|                                                                   |
+---------------------------------------------------------------------
+    """)
+    id = int(input("Masukkan No. Passport anda: "))
+    return id
 
 def checkpp(id):
-    ### mengecheck apakah nomor passporrt yang dimasukkan sama dengan yang ada di list
+    ### mengecheck apakah nomor passport yang dimasukkan sama dengan yang ada di list
     check = False
     for i in range(len(no_passport)):
         if no_passport[i] == id:
@@ -40,9 +57,9 @@ def checkpp(id):
 
 def menu():
     ### menentukkan menu mana yang dipilih user
-    print(""""
+    print("""
 ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
-|                           Currency Converter                          |
+|                           Konversi Mata Uang                          |
 |                                                                       |
 |   1. Daftar Kurs                                                      |
 |   2. Konversi mata uang                                               |
@@ -114,6 +131,25 @@ Pilihan anda : '''))
         input("Tekan untuk melanjutkan ... ")
         nomor_pilihan = menu()
         return nomor_pilihan
-    input("Tekan untuk melanjutkan ... ")
+    input("Tekan untuk melanjutkan ...")
     nomor_pilihan = menu()
     return nomor_pilihan
+
+#program utama
+id = start()
+if checkpp(id):
+    print("No. Pasport terdaftar")
+    nomor_menu = menu()
+    while True:
+        if nomor_menu == 1:
+            nomor_menu = daftar_kurs()
+        
+        elif nomor_menu == 3:
+            exit()
+        else:
+            print("Nomor menu tidak dikenal.")
+            input("Tekan untuk kembali ke menu utama ... ")
+            nomor_menu = menu()
+else:
+    print("Mohon periksa kembali No. Pasport anda.")
+    start()
