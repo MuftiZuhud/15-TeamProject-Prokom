@@ -140,16 +140,15 @@ id = start()
 if checkpp(id):
     print("No. Pasport terdaftar")
     nomor_menu = menu()
-    while True:
-        if nomor_menu == 1:
-            nomor_menu = daftar_kurs()
+    if nomor_menu == 1:
+        nomor_menu = daftar_kurs()
         
-        elif nomor_menu == 3:
-            exit()
-        else:
-            print("Nomor menu tidak dikenal.")
-            input("Tekan untuk kembali ke menu utama ... ")
-            nomor_menu = menu()
+    elif nomor_menu == 3:
+        exit()
+    else:
+        print("Nomor menu tidak dikenal.")
+        input("Tekan untuk kembali ke menu utama ... ")
+        nomor_menu = menu()
 else:
     print("Mohon periksa kembali No. Pasport anda.")
     start()
