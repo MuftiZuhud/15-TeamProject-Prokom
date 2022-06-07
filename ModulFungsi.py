@@ -25,3 +25,8 @@ def menu():
             """)
     nomor_menu = int(input("Masukkan nomor menu yang diinginkan = "))
     return nomor_menu
+
+def logout():
+    ### keluar dari program
+    print("Berhasil Log out")
+    exit()
