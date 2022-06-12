@@ -1,0 +1,4 @@
+Log Transaksi Konversi Uang
+-----------------------------
+Nomor Passport 3256758 berhasil melakukan konversi sejumlah 1500000.00 IDR menjadi 92.73 USD.
+Nomor Passport 0 berhasil melakukan konversi sejumlah 40.00 SGD menjadi 430107.53 IDR.

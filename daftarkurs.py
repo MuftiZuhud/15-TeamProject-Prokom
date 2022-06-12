@@ -11,5 +11,3 @@ def daftar_kurs():
         print("     ","{:12.2s}".format(kurs[i -1][0],), "{:.2f}".format(kurs[0][1]/kurs[i - 1][1]), "{:16.2f}".format(kurs[0][1]/kurs[i - 1][2]))
     print("=================================================")
     input("Tekan untuk melanjutkan ...")
-
-#daftar_kurs()
