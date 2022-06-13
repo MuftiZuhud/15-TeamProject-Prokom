@@ -1,4 +1,5 @@
 Log Transaksi Konversi Uang
 -----------------------------
 Nomor Passport 3256758 berhasil melakukan konversi sejumlah 1500000.00 IDR menjadi 92.73 USD.
-Nomor Passport 0 berhasil melakukan konversi sejumlah 40.00 SGD menjadi 430107.53 IDR.
+Nomor Passport 2341567 berhasil melakukan konversi sejumlah 3500000.00 IDR menjadi 203.64 EUR.
+Nomor Passport 2341567 berhasil melakukan konversi sejumlah 14000.00 CNY menjadi 2800.00 AUD.

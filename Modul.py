@@ -12,8 +12,8 @@ def start():
 |                   Tekan apapun untuk melanjutkan                  |
 |                                                                   |
 ---------------------------------------------------------------------
-    """)
-    id = int(input("Masukkan No. Passport anda: "))
+""")
+    id = input("Masukkan No. Passport anda: ")
     return id
 
 def checkpp(id):
@@ -21,10 +21,12 @@ def checkpp(id):
     df = pd.read_csv("passpor.csv", delimiter=",")
     passpor = [list(row) for row in df.values]
     check = False
-    for row in passpor:
-        if row[0] == id:
-            check = True
-            break
+    if id.isnumeric():
+        id = int(id)
+        for row in passpor:
+            if row[0] == id:
+                check = True
+                break
     return check
 
 def menu():
@@ -40,7 +42,7 @@ def menu():
 |                                                                       |
 ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
             """)
-    nomor_menu = int(input("Masukkan nomor menu yang diinginkan = "))
+    nomor_menu = input("Masukkan nomor menu yang diinginkan = ")
     return nomor_menu
 
 def logout():

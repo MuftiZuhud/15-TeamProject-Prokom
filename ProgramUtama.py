@@ -1,20 +1,30 @@
+#Program Utama Konversi Mata Uang
+#Kelompok 15 Teknik Industri 2021
+
 from Modul import start, checkpp, menu, logout
 from konversi import konversi
 from daftarkurs import daftar_kurs
 
 bendera = True
 while bendera:
+    ### memasukan nomor passport
     id = start()
+    ### mengecek nomor passport
     if checkpp(id):
         print("No. Passport terdaftar")
+
+        ### menampilkan menu
         nomor_menu = menu()
         while True:
-            if nomor_menu == 1:
+            ### menampilkan daftar kurs
+            if nomor_menu == "1":
                 daftar_kurs()
                 nomor_menu = menu()
-        
-            elif nomor_menu == 2:
+
+            ### melakukan konversi
+            elif nomor_menu == "2":
                 sebelum, sesudah, dari, ke, flag = konversi()
+                ### konfirmasi melakukan konversi
                 confirm = 0
                 while confirm != "y" and confirm != "n":
                     if flag:
@@ -23,6 +33,7 @@ while bendera:
                     else:
                         confirm = "n"
 
+                    ### melanjutkan melakukan konversi dan menulis log
                     if confirm == "y":
                             teks = f"\nNomor Passport {id} berhasil melakukan konversi sejumlah {sebelum:.2f} {dari} menjadi {sesudah:.2f} {ke}."
                             file_log = open("log.txt","a")
@@ -32,24 +43,26 @@ while bendera:
                             input("Tekan untuk melanjutkan ke menu utama ... ")
                             nomor_menu = menu()
 
+                    ### pilihan mengulang konversi
                     elif confirm == "n":
                         choice = 0
                         while choice != "y" and choice != "n":
                             choice = input("Ingin mengulangi konversi?(y/n) ")
-                        
+
                             if choice == "y":
-                                nomor_menu = 2
+                                nomor_menu = "2"     
 
                             elif choice == "n":
                                 input("Tekan enter untuk kembali ke menu utama.")
-                                nomor_menu = menu()
+                                nomor_menu = menu()  
                             else:
                                 print("Masukkan tidak dikenal.")
 
                     else:
                         print("Masukkan tidak dikenal.")
 
-            elif nomor_menu == 3:
+            ### melakukan logout
+            elif nomor_menu == "3":
                 logout()
 
             else:
@@ -57,6 +70,7 @@ while bendera:
                 input("Tekan untuk kembali ke menu utama ... ")
                 nomor_menu = menu()
 
+    ### nomor passport tidak sesuai
     else:
         print("Mohon periksa kembali No. Passport anda.")
         bendera = True

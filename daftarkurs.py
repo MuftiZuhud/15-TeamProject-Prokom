@@ -1,6 +1,7 @@
 import pandas as pd
 
 def daftar_kurs():
+    ### menampilkan daftar kurs
     df = pd.read_csv("kurs.csv", delimiter=",")
     kurs = [list(row) for row in df.values]
     print("=================================================")
