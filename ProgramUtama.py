@@ -1,5 +1,5 @@
 #Program Utama Konversi Mata Uang
-#Kelompok 15 Teknik Industri 2021
+#Kelompok 15 Praktikum Programa Komputer Teknik Industri 2021
 
 from Modul import start, checkpp, menu, logout
 from konversi import konversi
@@ -56,7 +56,7 @@ while bendera:
                                 nomor_menu = "2"     
 
                             elif choice == "n":
-                                input("Tekan enter untuk kembali ke menu utama.")
+                                input("Tekan untuk kembali ke menu utama ... ")
                                 nomor_menu = menu()  
                             else:
                                 print("Masukkan tidak dikenal.")

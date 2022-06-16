@@ -6,3 +6,4 @@ Log Transaksi Konversi Uang
 [06/16/2022, 10:51:59] Nomor Passport 9075432 berhasil melakukan konversi sejumlah 40.00 AUD menjadi 400000.00 IDR.
 [06/16/2022, 10:52:41] Nomor Passport 2341567 berhasil melakukan konversi sejumlah 1000000.00 IDR menjadi 64.76 USD.
 [06/16/2022, 10:59:50] Nomor Passport 6875430 berhasil melakukan konversi sejumlah 50000.00 KRW menjadi 37.28 USD.
+[06/16/2022, 13:42:15] Nomor Passport 1234567 berhasil melakukan konversi sejumlah 250000.00 IDR menjadi 12.86 GBP.
