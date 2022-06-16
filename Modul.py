@@ -17,7 +17,7 @@ def start():
     return id
 
 def checkpp(id):
-    ### mengecheck apakah nomor passporrt yang dimasukkan sama dengan yang ada di list
+    ### mengecek apakah nomor passport yang dimasukkan sesuai dengan yang ada di csv
     df = pd.read_csv("passpor.csv", delimiter=",")
     passpor = [list(row) for row in df.values]
     check = False
@@ -30,7 +30,7 @@ def checkpp(id):
     return check
 
 def menu():
-    ### menentukkan menu mana yang dipilih user
+    ### menentukan menu mana yang dipilih user
     print("""
 ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
 |                           Konversi Mata Uang                          |

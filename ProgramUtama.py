@@ -8,7 +8,7 @@ import time
 
 bendera = True
 while bendera:
-    ### memasukan nomor passport
+    ### memasukkan nomor passport
     id = start()
     ### mengecek nomor passport
     if checkpp(id):
