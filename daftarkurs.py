@@ -9,6 +9,6 @@ def daftar_kurs():
     print("   Mata Uang       Harga Jual       Harga Beli")
     print("=================================================")
     for i in range(1, len(kurs)+1):
-        print("     ","{:12.2s}".format(kurs[i -1][0],), "{:.2f}".format(kurs[0][1]/kurs[i - 1][1]), "{:16.2f}".format(kurs[0][1]/kurs[i - 1][2]))
+        print("     ","{:12.3s}".format(kurs[i -1][0],), "{:.2f}".format(kurs[0][1]/kurs[i - 1][1]), "{:16.2f}".format(kurs[0][1]/kurs[i - 1][2]))
     print("=================================================")
     input("Tekan untuk melanjutkan ...")

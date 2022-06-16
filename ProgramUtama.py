@@ -4,6 +4,7 @@
 from Modul import start, checkpp, menu, logout
 from konversi import konversi
 from daftarkurs import daftar_kurs
+import time
 
 bendera = True
 while bendera:
@@ -35,13 +36,15 @@ while bendera:
 
                     ### melanjutkan melakukan konversi dan menulis log
                     if confirm == "y":
-                            teks = f"\nNomor Passport {id} berhasil melakukan konversi sejumlah {sebelum:.2f} {dari} menjadi {sesudah:.2f} {ke}."
-                            file_log = open("log.txt","a")
-                            file_log.write(teks)
-                            file_log.close()
-                            print("Terima kasih telah melakukan konversi.")
-                            input("Tekan untuk melanjutkan ke menu utama ... ")
-                            nomor_menu = menu()
+                        ambilwaktu = time.localtime() ### mengambil waktu saat melakukan konversi
+                        waktu = time.strftime("[%m/%d/%Y, %H:%M:%S]", ambilwaktu)
+                        teks = f"\n{waktu} Nomor Passport {id} berhasil melakukan konversi sejumlah {sebelum:.2f} {dari} menjadi {sesudah:.2f} {ke}."
+                        file_log = open("log.txt","a")
+                        file_log.write(teks)
+                        file_log.close()
+                        print("Terima kasih telah melakukan konversi.")
+                        input("Tekan untuk melanjutkan ke menu utama ... ")
+                        nomor_menu = menu()
 
                     ### pilihan mengulang konversi
                     elif confirm == "n":
