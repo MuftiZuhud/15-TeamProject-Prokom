@@ -1,5 +1,13 @@
 import pandas as pd
 
+def isfloat(num):
+    ### mengecek nominal adalah float
+    try:
+        float(num)
+        return True
+    except ValueError:
+        return False
+
 def konversi():
     ### melakukan konversi
     df = pd.read_csv("kurs.csv", delimiter=",")
@@ -13,7 +21,7 @@ def konversi():
     kurs_awal = input("Masukkan nomor jenis mata uang yang ingin dikonversi : ")
     kurs_akhir = input("Masukkan nomor jenis mata uang tujuan konversi : ")
     nominal = input("Masukkan nominal uang yang ingin dikonversi : ")
-    if kurs_awal.isnumeric() and kurs_akhir.isnumeric() and nominal.isnumeric():
+    if kurs_awal.isnumeric() and kurs_akhir.isnumeric() and isfloat(nominal):
         kurs_awal = int(kurs_awal)
         kurs_akhir = int(kurs_akhir)
         nominal = float(nominal)
